@@ -309,9 +309,11 @@
         if (!name) {
             NSString *defName = node.defName;
             if (!defName) {
-                if (!defName) {
-                    defName = _defaultDefNameTab[strVal];
-                }
+                defName = _defaultDefNameTab[strVal];
+
+            }
+            if (!defName) {
+                defName = strVal;
             }
             name = [NSString stringWithFormat:@"TOKEN_KIND_%@", [defName uppercaseString]];
         }
